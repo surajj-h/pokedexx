@@ -40,7 +40,8 @@ class App extends Component {
     const { onSearchChange } = this;
     return (
       <div className="App">
-      <SearchBar onSearchChange={onSearchChange} placeholder="Search Pokemon" />
+      <h1 className="app-title">Pokedex</h1>
+      <SearchBar className="pokemon-search-box" onSearchChange={onSearchChange} placeholder="Search Pokemon" />
       <CardList searchListPokemons={search_pokemons}/>
       </div>
     );
