@@ -1,22 +1,12 @@
-import {Component} from 'react';
+import Card from '../card/card.component';
 import './card-list.styles.css';
 
-class CardList extends Component{
-  render(){
-
-    const {searchListPokemons} =this.props;
-
-    return (
-      <div className='card-list'>
-          {searchListPokemons.map((pokemon) => (
-            <div className='card-container'>
-              <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}></img>
-              <h1 key={pokemon.id}>{pokemon.name.english}</h1>
-            </div>
-          ))}
-        </div>
-    )
-  }
-}
+const CardList = ({ monsters }) => (
+  <div className='card-list'>
+    {monsters.map((monster) => {
+      return <Card key={monster.id} monster={monster} />;
+    })}
+  </div>
+);
 
 export default CardList;
